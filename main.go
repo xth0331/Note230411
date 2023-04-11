@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	note.Slice()
+	note.Map()
 }
