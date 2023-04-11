@@ -307,3 +307,4 @@ func Map() {
 	m1=make(map[string]string, 2) // make(Type,初始size)
 
 }
+// 
