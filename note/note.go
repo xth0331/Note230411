@@ -304,7 +304,7 @@ func Slice() {
 func Map() {
 	var m1 map[string]string
 	fmt.Println("m1 ==nil ?", m1 == nil)
-	m1 = make(map[string]string, 2) // make(Type,初始size)
+	m1 = make(map[string]string) // make(Type,初始size)
 	m1["早上"] = "敲代码"
 	m1["中午"] = "送外卖"
 	m1["晚上"] = "开滴滴"
