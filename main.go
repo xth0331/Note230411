@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	note.Map()
+	note.TypeDefintionAndTypeAlias()
 }

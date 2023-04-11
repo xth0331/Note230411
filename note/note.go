@@ -309,6 +309,56 @@ func Map() {
 	m1["中午"] = "送外卖"
 	m1["晚上"] = "开滴滴"
 	fmt.Println("m1 =", m1)
+	m2 := map[string]string{
+		"下午": "改BUG",
+		"凌晨": "卖早餐",
+	}
+	fmt.Println("m2=", m2)
+	v, ok := m2["下午"]
+	if ok {
+		fmt.Println("v =", v)
+	} else {
+		fmt.Println("key不存在")
+	}
+	delete(m1, "晚上")
+	fmt.Println(m1)
+	// m1 = nil
+	m2 = make(map[string]string)
+	fmt.Println("m2 =", m2)
+	fmt.Println("m1 =", m1)
+
+	for key, value := range m1 {
+		fmt.Printf("m1[%v]=%v\n", key, value)
+	}
 }
 
-//
+// 4.4 自定义数据类型 & 类型别名
+func TypeDefintionAndTypeAlias() {
+	fmt.Println("\n4.4.1 自定义数据")
+	type mesType uint16
+	var u1000 uint16 = 1000
+	var textMes mesType = mesType(u1000)
+	fmt.Printf("textMes=%v, Type of textMes=%T\n", textMes, textMes)
+	fmt.Println("\n4.4.2 类型别名")
+	type myUint16 = uint16
+	var myu16 myUint16 = u1000
+	fmt.Printf("textMes=%v, Type of textMes=%T\n", myu16, myu16)
+}
+
+// 4.5 结构体
+type User struct {
+	Name string
+	Id   uint32
+}
+
+func Struct() {
+	var u1 User = User{
+		Name: "张三",
+	}
+	u1.Id = 10000
+	// var u2 *User=new(User)
+	var u2 *User = &User{
+		Name: "李四",
+	}
+	u2.Id = 10001 // (*u2).Id = 10001
+}
