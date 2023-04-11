@@ -347,8 +347,17 @@ func TypeDefintionAndTypeAlias() {
 
 // 4.5 结构体
 type User struct {
-	Name string
+	Name string `json:"name"`
 	Id   uint32
+}
+
+type Account struct {
+	User
+	password string
+}
+type Contact struct {
+	*User
+	Remark string
 }
 
 func Struct() {
@@ -361,4 +370,44 @@ func Struct() {
 		Name: "李四",
 	}
 	u2.Id = 10001 // (*u2).Id = 10001
+	var a1 = Account{
+		User: User{
+			Name: "王五",
+		},
+		password: "666",
+	}
+	var c1 *Contact = &Contact{
+		User: &User{
+			Id: u2.Id,
+		},
+		Remark: "王麻子",
+	}
+	c1.Name = "王五" //c1.User.Name="王五"
+	fmt.Println("a1=", a1)
+	fmt.Println("c1=", c1)
+	fmt.Println("c1.User=", *((c1).User))
 }
+
+
+
+//5.1 方法
+func (u User) printName() {
+	fmt.Println("u.Name=", u.Name)
+}
+func (u *User) setId(){
+	(*u).Id = 10000
+}
+func Method() {
+	u := User{
+		Name: "小方块",
+	}
+	u.printName()
+	u.setId()
+	fmt.Println("u=", u)
+}
+
+//5.2 接口
+type textMes struct{}
+func(textMes)setText(){}
+type imgMes struct{}
+func(imgMes)setImg(){} 
