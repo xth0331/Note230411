@@ -388,13 +388,11 @@ func Struct() {
 	fmt.Println("c1.User=", *((c1).User))
 }
 
-
-
-//5.1 方法
+// 5.1 方法
 func (u User) printName() {
 	fmt.Println("u.Name=", u.Name)
 }
-func (u *User) setId(){
+func (u *User) setId() {
 	(*u).Id = 10000
 }
 func Method() {
@@ -406,8 +404,48 @@ func Method() {
 	fmt.Println("u=", u)
 }
 
-//5.2 接口
-type textMes struct{}
-func(textMes)setText(){}
-type imgMes struct{}
-func(imgMes)setImg(){} 
+// 5.2 接口
+type textMes struct {
+	Type string
+	Text string
+}
+
+func (tm *textMes) setText() {
+	tm.Text = "hello"
+}
+
+type imgMes struct {
+	Type string
+	Img  string
+}
+
+func (im *imgMes) setImg() {
+	im.Img = "清明上河图"
+}
+
+type Mes interface {
+	setType()
+}
+
+func (tm *textMes) setType() {
+	tm.Type = "文字消息"
+}
+func (im *imgMes) setType() {
+	im.Type = "图片消息"
+}
+func SendMes(m Mes) {
+	m.setType()
+	switch mptr := m.(type){
+	case *textMes:
+		mptr.setText()
+	case *imgMes:
+		mptr.setImg()
+	}
+	fmt.Println("m=", m)
+}
+func Interface() {
+	tm := textMes{}
+	SendMes(&tm)
+	im := imgMes{}
+	SendMes(&im)
+}

@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	note.Method()
+	note.Interface()
 }
