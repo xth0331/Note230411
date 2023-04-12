@@ -7,4 +7,3 @@ import (
 func main() {
 	note.Method()
 }
-// 1
