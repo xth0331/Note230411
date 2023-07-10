@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // var s1 string = "mysql ... -u root -p 123"
 // var s2 string
 // var s3 string = "北京 上海 广州 深圳"
@@ -147,10 +145,64 @@ func main() {
 	//		fmt.Println("摩羯座")
 	//	}
 	//}
-	var sum int
-	for count := 1; count <= 100; count++ {
-		sum += count
-	}
-	fmt.Println(sum)
+	// var sum int
+	// for count := 1; count <= 100; count++ {
+	// 	sum += count
+	// }
+	// fmt.Println(sum)
+	// for i := 0; i < 10; i++ {
+	// 	if i == 6 {
+	// 		// continue
+	// 		break
+	// 	}
+	// 	fmt.Println(i)
+	// }
+	// var sum int
+	// for i := 1; i < 100; i++ {
+	// 	if i == 88 {
+	// 		continue
+	// 	} else if i%2 != 0 {
+	// 		sum += i
+	// 		// fmt.Println(i, sum)
+	// 	} else {
+	// 		sum -= i
+	// 		// fmt.Println(i, sum)
+	// 	}
+	// }
+	// fmt.Println(sum)
+
+	// var birthdayStr string
+	// fmt.Println("请输入生日，格式为年-月-日,例如1999-1-11")
+	// fmt.Scanln(&birthdayStr)
+	// birthdaySplit := strings.Split(birthdayStr, "-")
+	// fmt.Printf("您的生日是%s年-%s月-%s日", (birthdaySplit[0]), (birthdaySplit[1]), (birthdaySplit[2]))
+	// var x = 10 // int
+	// var y = &x // *int
+	// var z = *y // int
+	// x = 20
+	// fmt.Println(x) // 20
+	// fmt.Println(*y) // 20
+	// fmt.Println(z) // 10
+	// *y =30
+	// fmt.Println(z) // 10
+	// var a = 100 //
+	// var b = &a
+	// var c = &b
+	// **c = 200
+	// fmt.Println(a)
+	// fmt.Println(reflect.TypeOf(c))
+	// var x int
+	// fmt.Println(x)
+
+	// var name string
+	// fmt.Println(name)
+
+	// 指针类型属于引用类型，包括切片，map，channel都属于
+	// 引用类型当声明未赋值之前是没有开辟内存空间的，没有默认值。
+	// var p = new(int)
+	// var p *int
+	// p = new(int)
+
+	// println(p)
 
 }
