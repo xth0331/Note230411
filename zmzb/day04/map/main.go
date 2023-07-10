@@ -33,5 +33,7 @@ func main() {
 	stu02["gender"] = "male"
 
 	fmt.Println(stu02)
-
+	for k, v := range stu02 {
+		fmt.Println(k, v)
+	}
 }
