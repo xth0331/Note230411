@@ -56,4 +56,3 @@ func main() {
 	whatAmI(1)
 	whatAmI("hey")
 }
-

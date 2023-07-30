@@ -28,7 +28,7 @@ func main() {
 		// 由于 `fib` 之前在 `main` 中声明过，
 		// 因此 Go 知道在这里用 `fib` 调用哪个函数。
 	}
-	for i:=0; i<10; i++{
+	for i := 0; i < 10; i++ {
 		fmt.Println(fib(i))
 	}
 }
