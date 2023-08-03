@@ -18,3 +18,26 @@ func worker(id int, jobs <-chan int, results chan<- int) {
 		results <- j * 2
 	}
 }
+func main() {
+	//为了使用 worker 工作池并且收集其的结果，我们需要 2 个通道。
+	const numJobs = 5
+	jobs := make(chan int, numJobs)
+	results := make(chan int, numJobs)
+
+	// 这里启动了三个worker，初始是阻塞度，因为还没有传递任务。
+	for w := 1; w <= 3; w++ {
+		go worker(w, jobs, results)
+	}
+	// 这里发送5个jobs，然后close这些通道，表示这些就是所有的任务了
+	for j := 1; j <= numJobs; j++ {
+		jobs <- j
+	}
+	close(jobs)
+	// 最后我们收集所有这些任务的返回值。
+	// 这也确保了所有的 worker 协程都已完成。
+	// 另一个等待多个协程的方法是使用WaitGroup。
+	for a := 1; a <= numJobs; a++ {
+		<-results
+	}
+
+}
