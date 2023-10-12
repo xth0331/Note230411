@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GoNote.iml" filepath="$PROJECT_DIR$/.idea/GoNote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../toy-web/.idea/toy-web.iml" filepath="$PROJECT_DIR$/../toy-web/.idea/toy-web.iml" />
     </modules>
   </component>
 </project>
