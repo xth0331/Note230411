@@ -71,11 +71,11 @@ func main() {
 	fmt.Println(post)
 	readPost, _ := GetPost(post.Id)
 	fmt.Println(readPost)
-	//readPost.Content = "Bonjour Monde!"
-	//readPost.Author = "Pierre"
-	//readPost.Update()
-	//
-	//posts, _ := Posts(10)
-	//fmt.Println(posts)
-	//readPost.Delete()
+	readPost.Content = "Bonjour Monde!"
+	readPost.Author = "Pierre"
+	readPost.Update()
+
+	posts, _ := Posts(10)
+	fmt.Println(posts)
+	readPost.Delete()
 }
