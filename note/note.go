@@ -435,7 +435,7 @@ func (im *imgMes) setType() {
 }
 func SendMes(m Mes) {
 	m.setType()
-	switch mptr := m.(type){
+	switch mptr := m.(type) {
 	case *textMes:
 		mptr.setText()
 	case *imgMes:
